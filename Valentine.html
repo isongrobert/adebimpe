@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Will You Be My Valentine? 💖</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #7a003c, #b30059);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Floating roses */
+    .rose {
+      position: absolute;
+      font-size: 2rem;
+      opacity: 0.7;
+      animation: float 12s linear infinite;
+    }
+
+    @keyframes float {
+      from {
+        transform: translateY(100vh) rotate(0deg);
+      }
+      to {
+        transform: translateY(-10vh) rotate(360deg);
+      }
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(8px);
+      border-radius: 20px;
+      padding: 40px 30px;
+      text-align: center;
+      max-width: 420px;
+      width: 90%;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+    }
+
+    .name {
+      color: #ffd1e6;
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .yes {
+      background: #ff4d88;
+      color: #fff;
+    }
+
+    .no {
+      background: #fff;
+      color: #7a003c;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 0.9rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <!-- Roses -->
+  <div class="rose" style="left: 10%; animation-delay: 0s;">🌹</div>
+  <div class="rose" style="left: 30%; animation-delay: 3s;">🌹</div>
+  <div class="rose" style="left: 50%; animation-delay: 6s;">🌹</div>
+  <div class="rose" style="left: 70%; animation-delay: 1s;">🌹</div>
+  <div class="rose" style="left: 90%; animation-delay: 4s;">🌹</div>
+
+  <div class="card">
+    <h1>Will you be my Valentine, <span class="name">Adebimpe</span>? 💕</h1>
+    <p>You’d make this Valentine’s Day incredibly special just by saying yes 🌹</p>
+
+    <div class="buttons">
+      <button class="yes" onclick="sendResponse('YES 💖')">Yes 💘</button>
+      <button class="no" onclick="sendResponse('NO 😢')">No 🙈</button>
+    </div>
+
+    <div class="footer">Made with love just for you 💗</div>
+  </div>
+
+  <script>
+    function sendResponse(answer) {
+      const subject = encodeURIComponent("Valentine's Response from Adebimpe 💌");
+      const body = encodeURIComponent(
+        `Hi!\n\nAdebimpe has responded to your Valentine proposal.\n\nHer answer: ${answer}\n\nTime: ${new Date().toLocaleString()}\n\nLove is in the air 🌹`
+      );
+
+      // CHANGE THIS EMAIL TO YOUR OWN
+      const yourEmail = "isongrobert@yahoo.com";
+
+      window.location.href = `mailto:${yourEmail}?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
